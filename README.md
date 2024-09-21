@@ -1,12 +1,9 @@
-Here’s a basic template for a README file for a delivery food app built using the MERN stack (MongoDB, Express, React, and Node.js):
-
----
-
 # Delivery Food App
 
 A full-stack food delivery application built using the MERN stack (MongoDB, Express, React, and Node.js). The app allows users to browse various restaurants, order food, track their order status, and pay online.
 
 ## Table of Contents
+
 - [Demo](#demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
