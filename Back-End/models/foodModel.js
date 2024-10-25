@@ -6,11 +6,6 @@ const foodSchema = new mongoose.Schema({
     ref: "Restaurant",
     required: true,
   },
-  categoryId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Category",
-    required: true,
-  },
   name: { type: String, required: true },
   description: { type: String },
   price: { type: Number, required: true },
