@@ -3,19 +3,17 @@ const foodController = require("../controllers/foodController");
 
 const router = express.Router();
 
-router
-  .route("/")
-  .get(foodController.getAllFoodController)
-  .post(foodController.createFoodController);
+router.route("/").get(foodController.getAllFoodController);
 
 router
-  .route("/:restaurantId")
-  .get(foodController.getFoodForRestaurantController);
+  .route("/:categoryId")
+  .get(foodController.getFoodForCategory)
+  .post(foodController.createFoodForCategory);
 
 router
-  .route("/:restaurantId/:id")
-  .get(foodController.getFoodController)
-  .patch(foodController.updatefoodController)
-  .delete(foodController.deletefoodController);
+  .route("/:categoryId/:id")
+  .get(foodController.getFood)
+  .patch(foodController.updateFood)
+  .delete(foodController.deleteFood);
 
 module.exports = router;
