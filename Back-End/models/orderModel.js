@@ -6,7 +6,6 @@ const orderSchema = new mongoose.Schema({
     ref: "User",
     required: [true, "Please provide a customer id"],
   },
-  restaurantIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" }],
   items: [
     {
       foodId: {
