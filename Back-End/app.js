@@ -9,6 +9,7 @@ const userRouter = require("./routes/userRoutes");
 const restaurantRouter = require("./routes/restaurantRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
 const foodRouter = require("./routes/foodRoutes");
+const cartRouter = require("./routes/cartRoutes");
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/restaurants", restaurantRouter);
 app.use("/api/v1/category", categoryRouter);
 app.use("/api/v1/food", foodRouter);
+app.use("/api/v1/cart", cartRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

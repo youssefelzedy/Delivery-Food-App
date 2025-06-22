@@ -17,7 +17,9 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 exports.createUser = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
 
-  const userCart = await Cart.create();
+  const userCart = await Cart.create({
+    customerId: newUser._id,
+  });
   res.status(201).json({
     status: "success",
     data: {
