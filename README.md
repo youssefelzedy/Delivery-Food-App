@@ -57,6 +57,7 @@ Check out the live demo of the application [here](https://example.com).
    ```bash
    cd Back-End
    npm install
+   npm start
    ```
 
 3. Install client dependencies:
