@@ -11,7 +11,7 @@ dotenv.config({ path: "./config.env" });
 const app = require("./app");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Delivery-Food-App")
+  .connect("mongodb://mongo-container:27017/Delivery-Food-App")
   .then(() => {
     console.log("DB connection successful 🥳");
   })

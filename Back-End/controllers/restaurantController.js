@@ -1,4 +1,5 @@
 const Restaurant = require("./../models/restaurantModel");
+const Order = require("./../models/orderModel");
 const catchAsync = require("./../utils/catchAsync");
 const AppError = require("./../utils/appError");
 
@@ -54,5 +55,20 @@ exports.deleteRestaurant = catchAsync(async (req, res, next) => {
   res.status(204).json({
     status: "success",
     data: null,
+  });
+});
+
+exports.getRestaurantOrders = catchAsync(async (req, res, next) => {
+  const orders = await Order.find({ "items.restaurantId": req.params.id });
+
+  if (!orders) {
+    return next(new AppError("No orders found for this restaurant", 404));
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      orders: orders,
+    },
   });
 });
